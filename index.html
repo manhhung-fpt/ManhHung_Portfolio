@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--ION-ICON-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!--GOOGLE-ICON-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+
+    <!--GOOGLE RECAPTCHA-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--AXIOS-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!--CSS + JS-->
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/toast.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+
+    <!--PAGE TITLE-->
+    <title>Tran Manh Hung | Portfolio Page</title>
+</head>
+
+<body>
+    <div id="toast__container">
+    </div>
+    <div class="nav-container">
+        <nav>
+            <div class="logo">
+                <img src="images/th-logo.webp" alt="" srcset="">
+            </div>
+            <ul>
+                <li onclick="scrollToSection('aboutme')"><span>About me</span></li>
+                <li onclick="scrollToSection('projects')"><span>Projects</span></li>
+                <li onclick="scrollToSection('skills')"><span>Skills</span></li>
+                <li onclick="scrollToSection('contact')"><span>Contact</span></li>
+            </ul>
+            <div class="nav-social">
+                <a class="cv-icon" href="/cv" target="_blank">
+                    <ion-icon name="reader"></ion-icon>
+                    <span class="tooltiptext cv-tooltiptext" id="cv-tooltiptext">View CV</span>
+                </a>
+
+                <a class="github-icon" href="https://github.com/manhhung-fpt" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                    <span class="tooltiptext github-tooltiptext" id="github-tooltiptext">GitHub</span>
+                </a>
+                <a class="linkedin-icon" href="https://www.linkedin.com/in/hungtran-fpt/" target="_blank">
+                    <ion-icon name="logo-linkedin">
+                    </ion-icon>
+                    <span class="tooltiptext linkedin-tooltiptext" id="linkedin-tooltiptext">LinkedIn</span>
+                </a>
+            </div>
+
+            <div class="nav-menu" onclick="showNavMobile()">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </nav>
+    </div>
+
+    <div class="nav-overlay" onclick="hideNavMobile()">
+
+    </div>
+    <div class="nav-mobile">
+        <div class="hide-btn" onclick="hideNavMobile()">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+        <ul>
+            <tr style="color: transparent;"></tr>
+            <li onclick="scrollToSection('aboutme')">About me</li>
+            <li onclick="scrollToSection('projects')">Projects</li>
+            <li onclick="scrollToSection('skills')">Skills</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
+        </ul>
+        <div class="social-btn">
+            <a href="/cv" target="_blank">
+                <ion-icon name="reader"></ion-icon>
+                <span>View CV</span>
+            </a>
+            <a href="https://github.com/manhhung-fpt" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/hungtran-fpt/3" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+
+
+        <div class="nav-footer">
+            <div>
+                <div>Tran Manh Hung</div>
+                <div style="font-size: 10px; font-weight: 300;">FRESHER WEB DEVELOPER</div>
+            </div>
+            <img src="/images/avatar_cropped.png" alt="">
+        </div>
+    </div>
+
+    <section class="about-me">
+        <div class="small-background">
+            <img src="/images/avatar_cropped.png" alt="">
+        </div>
+        <div class="background">
+            <div class="info">
+                <span></span>
+                <div class="hi">
+                    <span>Hi there <div id="hello-hand">👋</div></span>
+                    <br>
+                    <span>I'm</span>
+                    <span class="name"> Hung Tran</span>
+                </div>
+
+                <div class="role">Fresher Web Developer</div>
+
+
+                <div class="summary">I'm currently
+                    marjoring in software
+                    engineering at FPT University
+                    HCM. I love programming, UI
+                    design and am on my way to
+                    becoming a Mobile and
+                    Frontend Web Developer.
+                </div>
+                <div class="btn">
+                    <button onclick="scrollToSection('contact')">contact me <span class="material-icons-outlined">
+                            east
+                        </span></button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="heading">
+            <span>Featured projects</span>
+        </div>
+
+        <span class="desc">This section will be updated when I finish the next projects in the future.</span>
+
+        <div class="projects-container">
+            <div class="project-item">
+                <div class="project-img__project-info">
+                    <div class="project-img-container">
+                        <div class="project-img" style="background-image: url('images/projects/Boek.png');">
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+                        <div class="project-type">Group Project<span class="material-icons-round">
+                                groups
+                            </span></div>
+                        <div class="project-name">Book Fair Platform</div>
+                        <div class="project-detail">Boek is a platform that allows online and offline book sales 
+                            between customers, publishers and bookstores.
+                            <ul class="project-techs">
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="terminal"></ion-icon>Backend
+                                    </div>
+                                    <div class="tech-detail">
+                                        <div>C# MVC</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="desktop-outline"></ion-icon>Frontend
+                                    </div>
+                                    <div class="tech-detail">
+                                        HTML, CSS, JavaScript, ReactJs, Typescript
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="server"></ion-icon>Database
+                                    </div>
+                                    <div class="tech-detail">
+                                        MS SQL Server
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="cloud-upload"></ion-icon>Deployment
+                                    </div>
+                                    <div class="tech-detail">
+                                        AWS EC2 VPS, Azure DevOps
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-btn">
+                    <a class="github-btn" href="https://github.com/duynd243/book-fair-client" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                        <span>GitHub</span>
+                    </a>
+                    <a class="demo-btn" href="https://prn231.book-fair.cf/" target="_blank">
+                        <span>Live Demo</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+
+            </div>
+            <div class="project-item">
+                <div class="project-img__project-info">
+                    <div class="project-img-container">
+                        <div class="project-img" style="background-image: url(images/projects/Ichisan.png);">
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+                        <div class="project-type">Group Project<span class="material-icons-round">
+                                person
+                            </span>
+                        </div>
+                        <div class="project-name">Ichisan Platform</div>
+                        <div class="project-detail">Ichisan is a platform to help find translators for translation posts based on customer requirements.
+                            <ul class="project-techs">
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="terminal"></ion-icon>Backend
+                                    </div>
+                                    <div class="tech-detail">
+                                        <div>C# MVC</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="desktop-outline"></ion-icon>Frontend
+                                    </div>
+                                    <div class="tech-detail">
+                                        HTML, CSS, JavaScript, ReactJs
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="server"></ion-icon>Database
+                                    </div>
+                                    <div class="tech-detail">
+                                        MS SQL Server
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="cloud-upload"></ion-icon>Deployment
+                                    </div>
+                                    <div class="tech-detail">
+                                        Heroku, Azure DevOps
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="project-btn">
+                    <a class="github-btn" href="https://github.com/manhhung-fpt/Ichinsan" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                        <span>GitHub</span>
+                    </a>
+                    <a class="demo-btn" href="https://ichinsan.vercel.app/admin/dashboard" target="_blank">
+                        <span>Live Demo</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+
+            </div>
+            <div class="project-item">
+                <div class="project-img__project-info">
+                    <div class="project-img-container">
+                        <div class="project-img" style="background-image: url(images/projects/Fquiz.jpg);">
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+                        <div class="project-type">Group Project<span class="material-icons-round">
+                                person
+                            </span>
+                        </div>
+                        <div class="project-name">FPT Quiz & Survey</div>
+                        <div class="project-detail">Fquiz is a webapp for taking quizzes and taking surveys for FPT employees and students.
+                            <ul class="project-techs">
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="terminal"></ion-icon>Backend
+                                    </div>
+                                    <div class="tech-detail">
+                                        <div>Java SpringBoot</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="desktop-outline"></ion-icon>Frontend
+                                    </div>
+                                    <div class="tech-detail">
+                                        HTML, CSS, JavaScript
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="server"></ion-icon>Database
+                                    </div>
+                                    <div class="tech-detail">
+                                        MS SQL Server
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tech-title">
+                                        <ion-icon name="cloud-upload"></ion-icon>Deployment
+                                    </div>
+                                    <div class="tech-detail">
+                                        Tomcat, AWS EC2 VPS
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="project-btn">
+                    <a class="github-btn" href="https://github.com/duyndse150396/facilities-feedback" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                        <span>GitHub</span>
+                    </a>
+                    <a class="demo-btn" href="http://3.1.221.248/" target="_blank">
+                        <span>Live Demo</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+
+            </div>
+            
+        </div>
+        
+    </section>
+    <section class="skills">
+
+        <div class="heading">Technical skills</div>
+        <div class="desc">Technologies and tools that I prefer and have expirience working with.</div>
+        <div class="skills_tabs">
+            <div class="tab_item tab--active">Frontend</div>
+            <div class="tab_item">Backend</div>
+            <div class="tab_item">DevOps</div>
+            <div class="tab_item">Tools</div>
+        </div>
+
+        <div class="skills_content" style="display: flex;">
+            <div class="skill_item">
+                <img src="images/techs/html.webp" alt="" class="img">
+                <div class="name">HTML</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/css.webp" alt="" class="img">
+                <div class="name">CSS</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/js.webp" alt="" class="img">
+                <div class="name">JavaScript</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/React-logo.webp_.png" alt="" class="img">
+                <div class="name">ReactJs</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/ts-logo.png" alt="" class="img">
+                <div class="name">Typescript</div>
+            </div>
+        </div>
+        <div class="skills_content">
+            <div class="skill_item">
+                <img src="images/techs/java.webp" alt="" class="img">
+                <div class="name">Java</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/csharp.webp" alt="" class="img">
+                <div class="name">C#</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/sqlserver.webp" alt="" class="img">
+                <div class="name">SQL Server</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/postgres.webp" alt="" class="img">
+                <div class="name">PostgreSQL</div>
+            </div>
+        </div>
+        <div class="skills_content">
+            <div class="skill_item">
+                <img src="images/techs/aws.webp" alt="" class="img">
+                <div class="name">AWS EC2</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/heroku.webp" alt="" class="img">
+                <div class="name">Heroku</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/cloudflare.webp" alt="" class="img">
+                <div class="name">Cloudflare</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/github.webp" alt="" class="img">
+                <div class="name">GitHub</div>
+            </div>
+            <div class="skill_item">
+                <img src="images/techs/tomcat.webp" alt="" class="img">
+                <div class="name">Tomcat Server</div>
+            </div>
+        </div>
+
+        <div class="skills_content">
+            <div class="skill_item">
+                <img src="images/techs/vscode.webp" alt="" class="img">
+                <div class="name">VS Code</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/vs.webp" alt="" class="img">
+                <div class="name">Visual Studio</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/postman.webp" alt="" class="img">
+                <div class="name">Postman</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/sublime.webp" alt="" class="img">
+                <div class="name">Sublime Text</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/netbeans.webp" alt="" class="img">
+                <div class="name">NetBeans</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/intellij.webp" alt="" class="img">
+                <div class="name">IntelliJ IDEA</div>
+            </div>
+
+            <div class="skill_item">
+                <img src="images/techs/datagrip.webp" alt="" class="img">
+                <div class="name">DataGrip</div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="heading"><span>Get in touch</span></div>
+        <div class="desc">Fill out the form below to contact me and let's work together.</div>
+        <div class="contact_socicials_form">
+            <div class="contact_socials">
+                <a href="tel:+84328491676">
+                    <ion-icon name="call"></ion-icon>
+                    <span>Call me</span>
+                </a>
+                <a href="mailto:manhhungtran2308@gmail.com">
+                    <ion-icon name="mail"></ion-icon>
+                    <span>Email</span>
+                </a>
+                <a onclick="showFacebookLinks()">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <span>Facebook</span>
+                </a>
+            </div>
+            <div class="facebook_links" id="facebook_links">
+                <a class="facebook_profile" href="https://www.facebook.com/t.m.hung2308/" target="_blank">
+                    <img src="images/facebook.png">
+                    Facebook Profile</a>
+                <a class="messenger" href="https://m.me/t.m.hung2308" target="_blank">
+                    <img src="images/messenger.svg"> Messenger</a>
+                <div class="btn" onclick="showFacebookLinks()"><span class="material-icons-outlined">
+                        keyboard_arrow_up
+                    </span>Hide</div>
+            </div>
+            <form class="contact_form" id="contact_form" method="POST">
+                <div>
+                    <div class="title">Your name <span style="color: #ea4444;">*</span></div>
+                    <div class="input_wrapper">
+                        <input type="text" class="input" id="nameInput" name="fullName" placeholder="Enter your name">
+                        <ion-icon name="person"></ion-icon>
+
+                    </div>
+                    <div class="error_message" id="nameError">
+                        <div>
+                            <ion-icon name="alert-circle"></ion-icon>
+                            <span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="title">Email <span style="color: #ea4444;">*</span></div>
+                    <div class="input_wrapper">
+                        <input type="text" class="input" id="emailInput" name="email"
+                            placeholder="yourmail@example.com">
+                        <ion-icon name="mail"></ion-icon>
+                    </div>
+                    <div class="error_message" id="emailError">
+                        <div>
+                            <ion-icon name="alert-circle"></ion-icon><span></span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="title">Message <span style="color: #ea4444;">*</span></div>
+                    <div class="input_wrapper">
+                        <textarea name="message" id="messageInput" class="input"
+                            placeholder="Write your message here"></textarea>
+
+                    </div>
+
+                    <div class="error_message" id="messageError">
+                        <div>
+                            <ion-icon name="alert-circle"></ion-icon><span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="recaptcha_wrapper">
+                    <div class="g-recaptcha" data-sitekey="6LfLKqUdAAAAAHK2uxNrrlIB-u0a4Yt8HFEkUXni"></div>
+                </div>
+
+                <button class="send_Btn" type="submit"><span class="material-icons-round send_icon">
+                        send
+                    </span>Send Message</button>
+                <!-- <button class="send_Btn" type="submit">Sending <div class="loader"></div></button> -->
+
+            </form>
+        </div>
+
+
+    </section>
+    <footer>
+        <div class="wrapper">
+            <div>Made with <img src="images/heart.png" class="heart"> by <span class="footer_name"><span>Hung Tran</span></span></div>
+            <small id="copyright"></small>
+            <script>
+                document.getElementById("copyright").innerHTML = `&copy; ${new Date().getFullYear()}. All Rights Reserved.`
+            </script>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
